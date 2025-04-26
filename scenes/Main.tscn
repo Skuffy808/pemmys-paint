@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdl4dgrqvllq6"]
+[gd_scene load_steps=9 format=3 uid="uid://bdl4dgrqvllq6"]
 
 [ext_resource type="Script" uid="uid://ch6nixiylrfi5" path="res://scripts/main.gd" id="1_rvslj"]
 [ext_resource type="Texture2D" uid="uid://cesqw4fob0gtq" path="res://assets/mainarea.png" id="2_rvslj"]
+[ext_resource type="Texture2D" uid="uid://ck6gcr38e6g1o" path="res://assets/pemmy-sheet.png" id="3_0bbpv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rarhs"]
+atlas = ExtResource("3_0bbpv")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcsgt"]
+atlas = ExtResource("3_0bbpv")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c01mt"]
+atlas = ExtResource("3_0bbpv")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxtc6"]
+atlas = ExtResource("3_0bbpv")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlsqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rarhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcsgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c01mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxtc6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_rvslj")
@@ -13,3 +50,11 @@ scale = Vector2(4.219, 4.219)
 texture = ExtResource("2_rvslj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="pemmy" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 35)
+scale = Vector2(4.219, 4.219)
+sprite_frames = SubResource("SpriteFrames_jlsqs")
+autoplay = "default"
+frame_progress = 0.783122
