@@ -1,15 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3wxog0pesq7p"]
+[gd_scene load_steps=5 format=3 uid="uid://c3wxog0pesq7p"]
 
 [ext_resource type="Script" uid="uid://ujkaa7w7l0ek" path="res://scripts/startscreen.gd" id="1_m1yxm"]
 [ext_resource type="Texture2D" uid="uid://cwjwwc4bg4kob" path="res://assets/startscreen.png" id="2_o6o42"]
+[ext_resource type="Texture2D" uid="uid://bj7r1iqyq1css" path="res://assets/pressentertostart.png" id="3_o6o42"]
+[ext_resource type="Script" uid="uid://d5uupwnan8qn" path="res://scripts/bouncer.gd" id="3_q30ww"]
 
 [node name="Startscreen" type="Node2D"]
 script = ExtResource("1_m1yxm")
 
 [node name="startscreen" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-6.67572e-06, 6.67572e-06)
+position = Vector2(270, 270)
 scale = Vector2(4.21875, 4.21875)
 texture = ExtResource("2_o6o42")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(270, 270)
+
+[node name="Bouncer" type="Node2D" parent="."]
+script = ExtResource("3_q30ww")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bouncer"]
+texture_filter = 1
+scale = Vector2(4.219, 4.219)
+texture = ExtResource("3_o6o42")
