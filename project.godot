@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="pemmys-paint"
+run/main_scene="uid://c3wxog0pesq7p"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=540
+window/size/resizable=false
 
 [rendering]
 
