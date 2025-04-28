@@ -1,9 +1,8 @@
-[gd_scene load_steps=135 format=3 uid="uid://bdl4dgrqvllq6"]
+[gd_scene load_steps=134 format=3 uid="uid://bdl4dgrqvllq6"]
 
 [ext_resource type="Script" uid="uid://ch6nixiylrfi5" path="res://scripts/main.gd" id="1_rvslj"]
 [ext_resource type="Texture2D" uid="uid://cesqw4fob0gtq" path="res://assets/mainarea.png" id="2_rvslj"]
 [ext_resource type="Texture2D" uid="uid://ck6gcr38e6g1o" path="res://assets/pemmy-sheet.png" id="3_0bbpv"]
-[ext_resource type="Texture2D" uid="uid://dmuws042b3gir" path="res://assets/dialoguenext.png" id="3_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://xqe15j6fvfw1" path="res://assets/dialogue-sheet.png" id="4_rarhs"]
 [ext_resource type="Texture2D" uid="uid://jtsrb6f3so0m" path="res://assets/dialogue2-sheet.png" id="5_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://comwj5jyviadx" path="res://assets/dialogue3-sheet.png" id="6_jlsqs"]
@@ -746,7 +745,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gia1l")
 }],
-"loop": false,
+"loop": true,
 "name": &"Dialogue2",
 "speed": 5.0
 }, {
@@ -817,7 +816,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_84vju")
 }],
-"loop": false,
+"loop": true,
 "name": &"Dialogue3",
 "speed": 5.0
 }, {
@@ -903,7 +902,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ktb27")
 }],
-"loop": false,
+"loop": true,
 "name": &"Dialogue4",
 "speed": 5.0
 }]
@@ -919,12 +918,6 @@ texture = ExtResource("2_rvslj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="PressIcon" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-5, 174)
-scale = Vector2(4.219, 4.219)
-texture = ExtResource("3_jlsqs")
-
 [node name="pemmy" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(8, 35)
@@ -933,9 +926,11 @@ sprite_frames = SubResource("SpriteFrames_jlsqs")
 autoplay = "default"
 frame_progress = 0.783122
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Dialogue" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 181)
 scale = Vector2(4.219, 4.219)
 sprite_frames = SubResource("SpriteFrames_t70y2")
-animation = &"Dialogue1"
+animation = &"Dialogue4"
+autoplay = "Dialogue1"
+frame_progress = 0.305245
